@@ -1,0 +1,75 @@
+<div class="container" fxLayoutAlign="center" fxLayout="row">
+  <mat-card class="register-mat-card" fxLayout="row" fxFlex="55" fxFlex.xs="80" fxFlex.md="90" fxFlex.sm="90">
+    <div  ngClass.xs="register-xs">
+      <form [formGroup]="registerForm " (ngSubmit)="onSubmit()">
+      <mat-card-header class="mat-card-header">
+        <mat-card-title class="mat-card-title">
+          <span style="color:blue">F</span>
+          <span style="color:red">U</span>
+          <span style="color:orange">N</span>
+          <span style="color:blue">D</span>
+          <span style="color:green">O</span>
+          <span style="color:red">O</span>
+        </mat-card-title>
+
+      </mat-card-header>
+      <div>
+        <p class="register-text">Create your fundoo Account</p>
+      </div>
+      <div class="Form-Field" fxClass-xs="column" ngClass.xs="fxClass-xs">
+        <mat-form-field appearance="outline">
+          <mat-label>First name</mat-label>
+          <input matInput placeholder="First name" formControlName="firstName">
+          <mat-error>Enter valid first name</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Last name</mat-label>
+          <input matInput placeholder="Last name" formControlName="lastName">
+          <mat-error>Enter valid last name</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="Email-Field" fxLayout="column" fxLayoutAlign="stretch" fxClass-xs="column" ngClass.xs="fxClass-xs">
+        <mat-form-field appearance="outline">
+          <mat-label>email</mat-label>
+          <input matInput placeholder="email" formControlName="email">
+          <mat-error>Enter valid Email id</mat-error>
+          <mat-hint style="font-size: small; padding: 0px;">You can use letters,numbers & periods</mat-hint>
+        </mat-form-field>
+      </div>
+      <div fxClass-xs="column" ngClass.xs="fxClass-xs">
+        <button mat-button class="button" style="margin-top: 20px;">Use my current email address instead
+        </button>
+      </div>
+
+      <div class="Password-Field" fxClass-xs="column" ngClass.xs="fxClass-xs">
+        <mat-form-field appearance="outline">
+          <mat-label>Password</mat-label>
+          <input matInput placeholder="Password" formControlName="password">
+          <mat-error>Enter valid password</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Confirm</mat-label>
+          <input matInput type="password" placeholder="Confirm password" formControlName="confirmPassword">
+          <mat-error>Password not match</mat-error>
+        </mat-form-field>
+      </div>
+      <mat-hint style="font-size: small;padding: 0px;">Use 8 or more characters with a mix of letters,
+        numbers & symbols </mat-hint>
+      <div class="Checkbox">
+        <input type="checkbox" id="icon">Show password
+      </div>
+      <div class="Spacesforbutton" fxClass-xs="column">
+        <button class="buttonStyle" routerLink="/log-in">Sign in instead</button>
+        <button mat-button class="buttonStyleforNext">Next</button>
+    </div>
+     
+    </form>
+    </div>
+
+    <div class="image" >
+      <img src="../../../assets/images/Gimg.svg">
+      <mat-hint>One account. All of Fundoo</mat-hint>
+      <mat-hint> Working for you</mat-hint>
+    </div>
+  </mat-card>
+</div>

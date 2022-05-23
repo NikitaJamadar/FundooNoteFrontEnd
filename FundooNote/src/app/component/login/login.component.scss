@@ -1,0 +1,58 @@
+.logIn-text{
+  font-size: 15px;
+  margin: auto;
+  margin-right: 10;
+  margin-top: 0px;
+}
+.Form-Field .mat-form-field {
+  margin-left: 5px;
+  width: 85%;
+  margin-top: 30px;
+  
+}
+
+.Password-Field{
+  margin-top: 0%;
+  padding: 0px;
+}
+
+.ForgotEmailButton
+{
+  border: 0px;
+  color: blue;
+  font-size: medium;
+  background-color: transparent;
+  padding: 0px;
+}
+.mat-card{
+  border: 1px rgba(20, 20, 20, 0.438) solid;
+  border-radius: 10px;
+}
+.Spacesforbutton 
+{
+  display: flex;
+  gap: 20px 220px;
+  width: 490px;
+  color: blue;
+  margin-top: 70px;
+  font-size: medium;
+  //justify-content: space-between;
+}
+.buttonStyleforCreate
+{
+  padding-left: 0px;
+  border: 0px;
+  color: blue;
+  font-size: medium;
+  background-color: transparent;
+  margin-left: 0px;
+}
+.buttonStyleforNext
+{
+  border: 0px;
+  color: white;
+  background-color: blue;
+  height: 40px;width: 100px;
+  border-radius: 6px;
+    margin-right: 10%;
+}

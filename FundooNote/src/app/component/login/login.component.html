@@ -1,0 +1,54 @@
+<div fxLayoutAlign="center center" fxFlexFill>
+  <mat-card fxFlex="35" height="50">
+    <form [formGroup]="LoginForm " (ngSubmit)="onSubmit()">
+      <div class="header" fxLayoutAlign="center">
+        <h1>
+          <span style="color:blue">F</span>
+          <span style="color:red">U</span>
+          <span style="color:orange">N</span>
+          <span style="color:blue">D</span>
+          <span style="color:green">O</span>
+          <span style="color:red">O</span>
+        </h1>
+      </div>
+      <div fxLayoutAlign="center">
+        <h2>login</h2>
+      </div>
+      <div fxLayoutAlign="center">
+        <h3>Use your Fundoo Account</h3>
+      </div>
+
+
+      <div class="Form-Field" fxClass-xs="column">
+        <mat-form-field appearance="outline">
+          <mat-label>email</mat-label>
+          <input matInput placeholder="email" formControlName="email">
+          <mat-error>Enter valid Email id</mat-error>
+        </mat-form-field>
+        <div class="Password-Field">
+          <mat-form-field appearance="outline">
+            <mat-label>password</mat-label>
+            <input matInput placeholder="password" formControlName="password">
+            <mat-error>Enter valid password</mat-error>
+          </mat-form-field>
+        </div>
+
+        <div>
+          <button mat-button class="ForgotEmailButton" routerLink="/forgetpassword">Forgot Password?</button>
+        </div>
+        <div>
+          <mat-hint mat-button style="color: gray; margin-top: 10px;padding-left: 0px;">Not your computer?
+            Use
+            Guest mode to sign in privately.</mat-hint>
+        </div>
+        <div>
+          <p style="color: blue;padding-left: 0px;">Learn more</p>
+        </div>
+        <div class="Spacesforbutton">
+          <button class="buttonStyleforCreate" routerLink="/register">Create account</button>
+          <button mat-button class="buttonStyleforNext">Next</button>
+        </div>
+      </div>
+    </form>
+  </mat-card>
+</div>

@@ -1,0 +1,53 @@
+<div class="container" fxLayout="column" fxLayoutAlign=" center center">
+    <div class="note" style=" width:40%;border: 2px solid gray;" >
+        <div *ngIf="isShow" fxLayout="row">
+            <input class="title" style="width:100%;" placeholder="Title" [(ngModel)]="Title" >
+          
+        </div>
+
+        <div *ngIf="!isShow || isShow" (click)="show()">
+            <input class="Takenote" style="width: 100%;" placeholder="Take a note ..." [(ngModel)]="desc">
+        </div>
+        <div  *ngIf="isShow" fxLayout="row">
+                <div class="Limages">
+                    <button style="border: 0px;background-color: white; ">
+                      <img style="padding-top: 10px;block-size:20px; ;"
+                      src="../assets/images/alert.svg">
+                      </button>
+                  </div>
+                  <div class="Limages">
+                    <button style="border: 0px;background-color: white; ">
+                      <img style="padding-top: 10px;block-size:20px; ;"
+                      src="../assets/images/personAdd.svg">
+                      </button>
+                  </div>
+                  <div class="Limages">
+                    <button style="border: 0px;background-color: white; ">
+                      <img style="padding-top: 10px;block-size:20px; ;"
+                      src="../assets/images/pallete.svg">
+                      </button>
+                  </div>
+                  <div class="Limages">
+                    <button style="border: 0px;background-color: white; ">
+                      <img style="padding-top: 10px;block-size:20px; ;"
+                      src="../assets/images/album.svg">
+                      </button>
+                  </div>
+                  <div class="Limages">
+                    <button style="border: 0px;background-color: white; ">
+                      <img style="padding-top: 10px;block-size:20px; ;"
+                      src="../assets/images/archive.svg">
+                      </button>
+                  </div>
+                  <div class="Limages">
+                    <button style="border: 0px;background-color: white; ">
+                      <img style="padding-top: 10px;block-size:20px; ;"
+                      src="../assets/images/more.svg">
+                      </button>
+                  </div>
+                  <div>
+                    <button class="close" (click)="close()">Close</button>
+                  </div>
+        </div>
+       
+    </div>

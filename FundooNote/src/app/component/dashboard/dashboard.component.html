@@ -1,0 +1,74 @@
+<div class="example-container" [class.example-is-mobile]="mobileQuery.matches" fxLayout="column">
+  <mat-toolbar class="example-toolbar">
+    <div fxLayout="row" ngClass.xs="menu-xs" fxLayout.xs="row" fxLayout.xs="10">
+      <button style="border: 0px;" mat-icon-button (click)="snav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </div>
+    <div>
+      <img  src="../assets/images/fundoo.png" width="40px" height="40px">
+    </div>
+    <div>
+      <h1 >FundooNotes</h1>
+    </div>
+    <div class="searchbox" >
+      <img  src="../assets/images/search.svg" width="30px" height="30px">
+      <input class="inputSearchbox" type="text" placeholder="Search">
+    
+    </div>
+
+    <div class="Limages">
+      <button style="border: 0px;background-color: white; ">
+        <img style="padding-top: 10px;block-size:30px; ;"
+          src="../assets/images/refresh.svg">
+        </button>
+    </div>
+    <div>
+      <button style="border: 0px;background-color:transparent; "><img
+          style="padding-top: 10px;block-size:30px;"
+          src="../assets/images/view.svg">
+        </button>
+    </div>
+    <div>
+      <button class="Rbutton"><img style="padding-top: 10px;block-size:30px;"
+          src="../assets/images/setting.svg"></button>
+    </div>
+    <div>
+      <button class="Rbutton"><img style="padding-top: 10px; padding-left: 60px;block-size:30px;"
+          src="../assets/images/app.svg">
+        </button>
+    </div>
+    <div>
+      <button class="Rbutton"><img style="padding-top:10px margin-left=50px;block-size:30px;margin-top: 12px;"
+          src="../assets/images/person.svg">
+        </button>
+    </div>
+
+  </mat-toolbar>
+
+  <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+    <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches"
+      fixedTopGap="56">
+      <mat-nav-list class="sidenav">
+        <a mat-list-item routerLink="/Dashboard/notes">
+          <img class="icon" src="../assets/images/note.svg" alt="notes" > Notes</a>
+        <a mat-list-item >
+          <img class="icon" src="../assets/images/reminder.svg" alt="Reminder">
+          Reminder</a>
+        <a mat-list-item >
+          <img class="icon" src="../assets/images/editlabel.png" alt="Edit Lable">
+          Edit Lable</a>
+        <a mat-list-item routerLink="/Dashboard/archive" >
+          <img class="icon" src="../assets/images/archive.svg" alt="Archive">
+          Archive</a>
+        <a mat-list-item routerLink="/Dashboard/trash" >
+          <img class="icon" src="../assets/images/trash.svg" alt="Trash">
+          Trash</a>
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>  
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
