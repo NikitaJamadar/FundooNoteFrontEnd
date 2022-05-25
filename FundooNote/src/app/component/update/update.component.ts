@@ -21,7 +21,7 @@ export class UpdateComponent implements OnInit {
   noteId: any
 @Output() updateEvent = new EventEmitter<string>();
 
-  constructor( private _snackBar: MatSnackBar,private note:NoteService,public dialogRef: MatDialogRef<UpdateComponent>,@Inject(MAT_DIALOG_DATA) public data: any,
+  constructor( private _snackBar: MatSnackBar,public note:NoteService,public dialogRef: MatDialogRef<UpdateComponent>,@Inject(MAT_DIALOG_DATA) public data: any,
   ) { }
 
   ngOnInit(): void {
@@ -51,15 +51,10 @@ export class UpdateComponent implements OnInit {
       })
     },error=>{
       this._snackBar.open('Failed to update', '', {
-      duration: 2000,
-     
-
-      });
+      duration: 2000,  });
+    })
     }
-    )
-   
-  }
-  recieveMessage(event:any){
+    receiveMessage(event:any){
     this.onNoClick()
 
   }

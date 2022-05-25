@@ -23,8 +23,8 @@ export class ArchiveComponent implements OnInit {
       })
     }
   )}
-  archiveMessage(event:any){
-    this.GetAllNotes();
+  receiveMessage(event:any){
+    this.GetAllNotes()
+    
   }
- 
 }

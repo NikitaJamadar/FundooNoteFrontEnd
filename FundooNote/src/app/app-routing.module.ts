@@ -9,6 +9,7 @@ import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { GetAllNoteComponent } from './component/get-all-note/get-all-note.component';
 import { ArchiveComponent } from './component/archive/archive.component';
 import { TrashComponent } from './component/trash/trash.component';
+import { AuthGuard } from './auth/auth.guard';
 
 
 
@@ -19,7 +20,7 @@ const routes: Routes = [
   {path:`forgetpassword`,component:ForgetPasswordComponent},
   {path:`Resetpassword/:token`,component:ResetPasswordComponent},
  
-  {path: 'Dashboard', component:DashboardComponent,
+  {path: 'Dashboard', canActivate:[AuthGuard] ,component:DashboardComponent,
    children:[
     {path:'notes',component:GetAllNoteComponent},
     {path:'archive',component:ArchiveComponent},

@@ -35,6 +35,8 @@ import { UpdateComponent } from './component/update/update.component';
 import { IconsComponent } from './component/icons/icons.component';
 import { ArchiveComponent } from './component/archive/archive.component';
 import { TrashComponent } from './component/trash/trash.component';
+import { AuthGuard } from './auth/auth.guard';
+import { FilterPipe } from './pipes/filter.pipe';
 
 
 
@@ -54,6 +56,7 @@ import { TrashComponent } from './component/trash/trash.component';
     IconsComponent,
     ArchiveComponent,
     TrashComponent,
+    FilterPipe,
         
     
     
@@ -83,7 +86,7 @@ import { TrashComponent } from './component/trash/trash.component';
    MatMenuModule,
    MatSnackBarModule
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

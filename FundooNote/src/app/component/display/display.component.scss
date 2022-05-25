@@ -1,18 +1,15 @@
-.noteDisplaySetting
+.Display
 {
-    // display: flex;
-    // flex-direction: row;
-    // border: 1px solid black;width: 100px;margin-left: 400px;
-    // height: 100px;
-    // border-radius: 14px;
-    border: 1px solid green; 
-    //width:600px;
-    margin-left: 70px;
+    margin-left: 50px;
     border-color: #e0e0e0;
     margin-top: 50px;
     border-radius: 14px;
-    width: 300px;
-    height: 120px;
     padding-top: 10px;
-    
+    width: 350px;
+    height: 200px;
 }
+::ng-deep .my-custom-dialog-class {
+    mat-dialog-container {
+      padding: 0;
+    }
+  }

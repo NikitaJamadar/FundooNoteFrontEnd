@@ -72,7 +72,7 @@ deleteNote( noteId: any) {
   return this.httpService.deleteService(this.base + `/Note/DeleteNote/${noteId}`, true, header)
 }
 
-trashNote( noteId: any, data:any) {
+trashNote( noteId: any) {
 
   console.log("token", this.token)
 
@@ -82,7 +82,18 @@ trashNote( noteId: any, data:any) {
       'Authorization': 'Bearer ' + this.token
     })
   }
-  return this.httpService.putService(this.base + `/Note/IsTrash${noteId}`,data, true, header)
+  return this.httpService.putService(this.base + `/Note/IsTrash${noteId}`,{}, true, header)
+}
+colorPallete( noteId: any, color:any){
+  console.log("token",this.token);
+
+  let header = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + this.token
+    })
+ }
+ return this.httpService.putService(this.base + `/Note/ChangeColorNote/${noteId}?color=${color}`,color, true, header)
 }
 
 }

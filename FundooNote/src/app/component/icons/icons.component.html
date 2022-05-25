@@ -1,37 +1,53 @@
-<div class="icons" >
-    <div *ngIf="!isTrashComponent" fxLayout="row" style="width: 250px;">
-        <button mat-icon-button matTooltip="Remind me"> <img src="../../../assets/images/alert.svg" width="20px"
-                height="20px"></button>
-        <button mat-icon-button matTooltip="Collaborator"> <img src="../../../assets/images/person.svg"
-                width="20px" height="20px"></button>
-        <button mat-icon-button matTooltip="Background color"> <img src="../../../assets/images/pallete.svg"
-                width="20px" height="20px"></button>
-        <button mat-icon-button matTooltip="add image"> <img src="../../../assets/images/album.svg" width="20px"
-                height="20px"></button>
-        <div *ngIf="isDisplayComponent">
-            <button class="archive" mat-icon-button matTooltip="Archive" (click)="archieve(notedata)"> <img
-                    src="../../../assets/images/archive.svg" width="20px" height="20px"></button>
-        </div>
-        <div *ngIf="isArchieveComponent">
-            <button mat-icon-button matTooltip="Unarchive" (click)="archieve(notedata);" *ngIf="isArchieveComponent">
-                <img src="../../../assets/images/unarchive.svg" width="20px" height="20px"></button>
-        </div>
-        <button class="more" mat-icon-button matTooltip="More" [matMenuTriggerFor]="menu"><img
-                src="../../../assets/images/more.svg" width="20px" height="20px"></button>
-        <mat-menu #menu="matMenu">
-                <button mat-menu-item (click)="trash(notedata)">Delete note</button>
-            <button mat-menu-item>Change labels</button>
-            <button mat-menu-item>Add drawing</button>
-            <button mat-menu-item>Make a copy</button>
-            <button mat-menu-item>Show checkboxes</button>
-            <button mat-menu-item>Copy to google Docs</button>
-        </mat-menu>
+<div class="icons">
+        <div *ngIf="!isTrashComponent" fxLayout="row" style="width: 250px;">
+                <button mat-icon-button matTooltip="Remind me"> <img src="../../../assets/images/alert.svg" width="20px"
+                                height="20px"></button>
+                <button mat-icon-button matTooltip="Collaborator"> <img src="../../../assets/images/person.svg"
+                                width="20px" height="20px"></button>
 
-    </div>
-    <div *ngIf="isTrashComponent">
-        <button mat-icon-button matTooltip="Delete Forever" (click)="delete()"> <img
-                src="../../../assets/images/delete_forever.svg" width="30px" height="30px"></button>
-        <button mat-icon-button matTooltip="Restore" (click)="trash(notedata)"> <img
-                src="../../../assets/images/restore.svg" width="30px" height="30px"></button>
-    </div>
+                <div class="imageSetting">
+                        <button mat-button [matMenuTriggerFor]="background_color"
+                                style="border: 0px;background-color:transparent"><img
+                                        src="../../../assets/images/pallete.svg" width="20px" height="20px"></button>
+                        <mat-menu #background_color="matMenu">
+                                <div fxLayout="row wrap" style="width: 220px;" >
+                                        <div *ngFor="let color of colorsArr" class="pallete">
+                                                <button class="colorbox" [style.background]="color?.Colorcode"
+                                                        (click)="changeColor(color?.Colorcode)"></button>
+                                        </div>
+                                </div>
+
+                        </mat-menu>
+                </div>
+
+
+                <button mat-icon-button matTooltip="add image"> <img src="../../../assets/images/album.svg" width="20px"
+                                height="20px"></button>
+                <div *ngIf="isDisplayComponent">
+                        <button class="archive" mat-icon-button matTooltip="Archive" (click)="archieve()"> <img
+                                        src="../../../assets/images/archive.svg" width="20px" height="20px"></button>
+                </div>
+                <div *ngIf="isArchieveComponent">
+                        <button mat-icon-button matTooltip="Unarchive" (click)="Unarchieve();"
+                                *ngIf="isArchieveComponent">
+                                <img src="../../../assets/images/unarchive.svg" width="20px" height="20px"></button>
+                </div>
+                <button class="more" mat-icon-button matTooltip="More" [matMenuTriggerFor]="menu"><img
+                                src="../../../assets/images/more.svg" width="20px" height="20px"></button>
+                <mat-menu #menu="matMenu">
+                        <button mat-menu-item (click)="trash(notedata)">Delete note</button>
+                        <button mat-menu-item>Change labels</button>
+                        <button mat-menu-item>Add drawing</button>
+                        <button mat-menu-item>Make a copy</button>
+                        <button mat-menu-item>Show checkboxes</button>
+                        <button mat-menu-item>Copy to google Docs</button>
+                </mat-menu>
+
+        </div>
+        <div *ngIf="isTrashComponent">
+                <button mat-icon-button matTooltip="Delete Forever" (click)="delete()"> <img
+                                src="../../../assets/images/delete_forever.svg" width="30px" height="30px"></button>
+                <button mat-icon-button matTooltip="Restore" (click)="restore(notedata)"> <img
+                                src="../../../assets/images/restore.svg" width="30px" height="30px"></button>
+        </div>
 </div>

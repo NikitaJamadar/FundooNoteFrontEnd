@@ -26,10 +26,8 @@ export class TrashComponent implements OnInit {
     }
   )}
   
-  trashMessage(event:any){
+  receiveMessage(event:any){
     this.GetAllNotes();
-  }
-  deleteMessage(event:any){
-    this.GetAllNotes();
-  }
+ }
+
 }

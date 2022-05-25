@@ -11,7 +11,7 @@ export class HttpService {
   postService(url: string, payload: any, token: boolean= false, httpOptions: any={} ){
    return this.http.post(url,payload,token && httpOptions)
   }
-  putService(url:any,payload:any,token:boolean=false,httpOptions:any){
+  putService(url:any,payload:any,token:boolean=true,httpOptions:any){
     return this.http.put(url,payload,token && httpOptions)
   }
   getService(url:any,token:boolean=false,httpOptions:any){

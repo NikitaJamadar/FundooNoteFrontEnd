@@ -1,3 +1,3 @@
 
 <app-create-note (messageEvent)="receiveMessage($event)"></app-create-note>
-<app-display [recievedNoteList]="noteList"  (updateEvent)="updateMessage($event)" (archieveEvent)="archieveMessage($event)"></app-display>
+<app-display [recievedNoteList]="noteList"  (refreshEvent)="receiveMessage($event)" ></app-display>

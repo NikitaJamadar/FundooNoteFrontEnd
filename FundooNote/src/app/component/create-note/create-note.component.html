@@ -5,8 +5,15 @@
           
         </div>
 
-        <div *ngIf="!isShow || isShow" (click)="show()">
+        <div *ngIf="!isShow || isShow" (click)="show()" fxLayout="row">
             <input class="Takenote" style="width: 100%;" placeholder="Take a note ..." [(ngModel)]="desc">
+            <span *ngIf="!isShow" fxLayout="row">
+              <img style="padding-top: 10px; margin-right: 35px;" src="../../../assets/images/check_box_FILL0_wght400_GRAD0_opsz48.svg" width="20px" height="20px">
+            <img  style="padding-top: 10px; margin-right: 25px;" src="../../../assets/images/brush_FILL0_wght400_GRAD0_opsz48.svg" width="20px" height="20px">               
+            <img style="padding-top: 10px;" src="../../../assets/images/album.svg" width="20px" height="20px">
+            </span>
+              
+            
         </div>
         <div  *ngIf="isShow" fxLayout="row">
                 <div class="Limages">

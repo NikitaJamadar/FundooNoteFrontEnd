@@ -1,19 +1,13 @@
-<!--div  style="border: 1px solid grey; width: 200px; height: 50px; margin: 30px; " *ngFor="let note of recievedNoteList">
-    <p (click)="openDialog()">  {{note.title}}</p>
-    <p (click)="openDialog()"> {{note.description}} </p>
-    <p> {{note.data}}</p>
-</div-->
-
 <div fxLayout="row wrap">
-    <div *ngFor="let note of recievedNoteList" fxLayout="column"  fxLayoutAlign="space-around center" class="noteDisplaySetting" >
-            
-            <div>
-                    <p style="font-size: medium;font: bold;margin-left: -100px;" (click)="openDialog(note)" >{{note.title}}</p>
-                    <p style="margin-left: -100px;" (click)="openDialog(note)">{{note.description}}</p>
-                    <p style="margin-left: -100px;"> {{note.data}}</p>
-            </div>
-            <div style="margin-left:4px;">
-                <app-icons [notedata]="note" (deleteEvent)="deleteMessage($event)" (archiveEvent)="archiveMessage($event)" (trashEvent)="trashMessage($event)" class="allicons"></app-icons>   
+    <div *ngFor="let note of recievedNoteList | filter:FilterMsg" fxLayout="column" fxLayoutAlign="space-around center"
+        [style.background]="note.bgColor" class="Display">
+        <div>
+            <p style="font-size: medium;font: bold;margin-left: -100px;" (click)="openDialog(note)">{{note.title}}</p>
+            <p style="margin-left: -100px;" (click)="openDialog(note)">{{note.description}}</p>
+
+        </div>
+        <div style="margin-left:4px;">
+            <app-icons [notedata]="note" (refresh)="receivedMessage($event)" class="icons"></app-icons>
         </div>
     </div>
 </div>
