@@ -1,12 +1,12 @@
-<div class="note" [style.background]="data.bgColor" >
+<div class="note" [style.background]="bgColor">
 
-   <div fxLayout="row" fxLayoutAlign="space-between center" >
-      <input [style.background]="data.bgColor" class="mat-title" placeholder="Title" matInput mat-dialog-title [(ngModel)]="title">
+   <div fxLayout="row" fxLayoutAlign="space-between center">
+      <input class="mat-title" placeholder="Title" matInput mat-dialog-title [(ngModel)]="title">
    </div>
 
-   <div fxLayout="row" fxLayoutAlign="space-between center" >
-      <input [style.background]="data.bgColor" class="mat-title" placeholder="Description" matInput mat-dialog-title [(ngModel)]="description">
+   <div fxLayout="row" fxLayoutAlign="space-between center">
+      <input class="mat-title" placeholder="Description" matInput mat-dialog-title [(ngModel)]="description">
    </div>
-   <app-icons  style="margin-top: 30px;" [notedata]="data" (refresh)="receiveMessage($event)"></app-icons>
-   <button [style.background]="data.bgColor"  class="button" (click)="onNoClick()">update</button>
+   <app-icons style="margin-top: 30px;" [notedata]="data"></app-icons>
+   <button class="button" (click)="onNoClick()">update</button>
 </div>

@@ -1,12 +1,12 @@
 <div class="container" fxLayout="column" fxLayoutAlign=" center center">
-    <div class="note" style=" width:40%;border: 2px solid gray;" >
+    <div class="note" style=" width:40%;border: 2px solid rgb(218, 213, 213);" >
         <div *ngIf="isShow" fxLayout="row">
-            <input class="title" style="width:100%;" placeholder="Title" [(ngModel)]="Title" >
+            <input class="title" style="width:100%; height: 10px;" placeholder="Title" [(ngModel)]="Title" >
           
         </div>
 
         <div *ngIf="!isShow || isShow" (click)="show()" fxLayout="row">
-            <input class="Takenote" style="width: 100%;" placeholder="Take a note ..." [(ngModel)]="desc">
+            <input class="Takenote" style="width: 100%; height: 18px;" placeholder="Take a note ..." [(ngModel)]="desc">
             <span *ngIf="!isShow" fxLayout="row">
               <img style="padding-top: 10px; margin-right: 35px;" src="../../../assets/images/check_box_FILL0_wght400_GRAD0_opsz48.svg" width="20px" height="20px">
             <img  style="padding-top: 10px; margin-right: 25px;" src="../../../assets/images/brush_FILL0_wght400_GRAD0_opsz48.svg" width="20px" height="20px">               

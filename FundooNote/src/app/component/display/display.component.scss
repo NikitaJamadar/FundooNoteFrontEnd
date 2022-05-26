@@ -1,15 +1,32 @@
-.Display
-{
-    margin-left: 50px;
-    border-color: #e0e0e0;
-    margin-top: 50px;
-    border-radius: 14px;
-    padding-top: 10px;
-    width: 350px;
-    height: 200px;
+.display{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
 }
+.notes{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 220px;
+  margin-left: 30px;
+  height: 100px;
+}
+
 ::ng-deep .my-custom-dialog-class {
-    mat-dialog-container {
-      padding: 0;
-    }
+  mat-dialog-container {
+    padding: 0;
   }
+}
+.flex{
+ 
+  visibility: hidden;
+}
+.displayNote:hover .icons{
+  display: block; 
+}
+
+
+
+
+
+

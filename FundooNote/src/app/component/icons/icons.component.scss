@@ -1,20 +1,24 @@
-.remind{
-    margin-bottom: 500px;
-}
-.icons button{
-    margin-right: 5px;
-  
-  
-}
 
-  .colorbox
-  {
-      background-color: transparent;
-      width: 30px;
-      height: 30px;
-      border-radius: 50px;
-      margin: auto;
-      border: 0px solid;
+.icon{
+   
+    padding-right: 20px;
+    size: 20px;
+    height: 20px;
+    border:none;
+    padding-top: 20px;
   }
- 
+  .flex{
+   display: flex;
+  flex-direction: row;}
+  
+  .colorBox{
+    padding: 1px;
+    width: 50px;
+   
+  }
+  .colors{
+    height: 40px; 
+    width:40px; 
+    border-radius: 35px;
+  }
   

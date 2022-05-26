@@ -3,6 +3,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { DataService } from 'src/app/services/Data/data.service';
+import { GridService } from 'src/app/services/GridList/grid.service';
 import { UpdateComponent } from '../update/update.component';
 
 @Component({
@@ -13,7 +14,7 @@ import { UpdateComponent } from '../update/update.component';
 export class DisplayComponent implements OnInit {
   note:any
   FilterMsg:string=""
-  
+  gridList: any;
   @Input()recievedNoteList:any;
   @Output() refreshEvent= new EventEmitter<any>();
   
@@ -25,10 +26,11 @@ export class DisplayComponent implements OnInit {
       console.log(message)
       this.FilterMsg=message
     })
+    
   }
   openDialog(note:any): void {
     const dialogRef = this.dialog.open(UpdateComponent, {
-      width: '500px',
+      width: '400px',
       data:note,
       panelClass:'my-custom-dialog-class'
     });

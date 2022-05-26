@@ -13,13 +13,12 @@ export class UpdateComponent implements OnInit {
   
   title: any
   description: any
-  bgcolor: any
-  image: any
+  bgColor: any
   isArchive: any
   isPin: any
   isTrash: any
   noteId: any
-@Output() updateEvent = new EventEmitter<string>();
+@Output()  refreshEvent = new EventEmitter<string>();
 
   constructor( private _snackBar: MatSnackBar,public note:NoteService,public dialogRef: MatDialogRef<UpdateComponent>,@Inject(MAT_DIALOG_DATA) public data: any,
   ) { }
@@ -28,6 +27,7 @@ export class UpdateComponent implements OnInit {
     console.log(this.data);
     this.title = this.data.title
     this.description = this.data.description
+   this.bgColor=this.data.bgColor
   }
   onNoClick(): void {
    
@@ -35,7 +35,7 @@ export class UpdateComponent implements OnInit {
     {
       title: this.title,
       description:this.description,
-      "bgColor": "string",
+      bgColor: "string",
       "isArchive": false,
       "isReminder": false,
       "isPin": false,
@@ -44,6 +44,7 @@ export class UpdateComponent implements OnInit {
     this.note.updateNote(data,this.data.noteId).subscribe((res:any)=>
     {
       console.log("update response=",res);
+     
       this.dialogRef.close(res);
       this._snackBar.open('Note updated successfully', '', {
         duration: 2000,
@@ -54,8 +55,8 @@ export class UpdateComponent implements OnInit {
       duration: 2000,  });
     })
     }
-    receiveMessage(event:any){
+    receivedMessage(event:any){
     this.onNoClick()
-
+    
   }
 }

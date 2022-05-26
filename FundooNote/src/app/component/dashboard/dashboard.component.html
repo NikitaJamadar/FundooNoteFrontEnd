@@ -13,7 +13,7 @@
     </div>
     <div class="searchbox" >
       <img  src="../assets/images/search.svg" width="30px" height="30px">
-      <input class="inputSearchbox" type="text" placeholder="Search"  (keyup)="keyFunction($event)">
+      <input class="inputSearchbox"  placeholder="Search"  (keyup)="keyFunction($event)">
     
     </div>
 
@@ -23,12 +23,16 @@
           src="../assets/images/refresh.svg">
         </button>
     </div>
-    <div>
-      <button style="border: 0px;background-color:transparent; "><img
-          style="padding-top: 10px;block-size:30px;"
-          src="../assets/images/view.svg">
-        </button>
+
+    <div *ngIf="!grid" >
+      <button  (click)="ListView()" style="border: 0px;background-color:transparent; padding-left: 20px;"><img style="padding-top: 10px;"
+          src="../../../assets/images/view_agenda_FILL0_wght400_GRAD0_opsz48.svg" width="30px" height="30px"></button>
     </div>
+    <div *ngIf="grid" >
+      <button class="button" (click)="GridView()"><img style="padding-top: 12px;"
+          src="../../../assets/images/grid_view_FILL0_wght400_GRAD0_opsz48.svg" width="30px" height="30px"></button>
+    </div>
+
     <div>
       <button class="Rbutton"><img style="padding-top: 10px;block-size:30px;"
           src="../assets/images/setting.svg"></button>
@@ -39,7 +43,7 @@
         </button>
     </div>
     <div>
-      <button class="Rbutton"><img style="padding-top:10px margin-left=50px;block-size:30px;margin-top: 12px;"
+      <button class="Rbutton" (click)="logout()"><img style="padding-top:10px margin-left=50px;block-size:30px;margin-top: 12px;"
           src="../assets/images/person.svg">
         </button>
     </div>

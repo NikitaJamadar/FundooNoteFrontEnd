@@ -2,16 +2,18 @@
     display: flex;
     padding: 60px;
    
+   
     }
     .note{
         padding: 10px;
         border-radius: 10px;
-       
+        box-shadow: 1px 1px 1px 1px rgb(204, 201, 201);
     }
     .title{
         
-        font-size: 15px;
+        font-size: 18px;
         background-color: white;
+        margin-top: 5px;
     }   
     .Takenote{  
         font-size: 15px; 
@@ -20,12 +22,13 @@
     }
     .close{
     margin-left: 150px;
-    margin-top: 10px;
+    margin-top: 25px;
        border: 0;
        outline: 0;
     }
     .Limages{
     margin-left: 10px;
+    margin-top: 20px;
     }
     
     input {border:0;outline:0;}

@@ -51,7 +51,8 @@
 
 .inputSearchbox
 {
-  height: 30px; border: 0px; background: none;width: 500px; font-size: large;
+  height: 30px; border:none; background: none;width: 500px; font-size: large ;
+  outline: none;
 }
 .Limages{
   margin-left: 200px;
@@ -75,4 +76,8 @@ a:hover {
 }
 .sidenav{
   width: 200px;
+}
+.button
+{
+  border: 0px;background-color: transparent;padding-left: 20px;
 }

@@ -3,6 +3,7 @@ import {MediaMatcher} from '@angular/cdk/layout';
 import { Router } from '@angular/router';
 import { DataService } from 'src/app/services/Data/data.service';
 import { Message } from '@angular/compiler/src/i18n/i18n_ast';
+import { GridService } from 'src/app/services/GridList/grid.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -12,6 +13,8 @@ import { Message } from '@angular/compiler/src/i18n/i18n_ast';
 export class DashboardComponent implements OnDestroy {
 
   mobileQuery: MediaQueryList;
+  grid = false;
+  formatGridList = false;
 
   fillerNav = Array.from({length: 50}, (_, i) => `Nav Item ${i + 1}`);
 
@@ -27,7 +30,7 @@ export class DashboardComponent implements OnDestroy {
 
   private _mobileQueryListener: () => void;
 
-  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher,private router:Router ,private Data:DataService) {
+  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher,private nextData: GridService,private router:Router ,private Data:DataService) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
@@ -40,5 +43,19 @@ export class DashboardComponent implements OnDestroy {
   keyFunction(event:any){
     console.log("event",event.target.value);
     this.Data.changeMessage(event.target.value)
+  }
+  
+
+  ListView() {
+    
+  }
+  GridView() {
+    
+  }
+  logout()
+  {
+    localStorage.removeItem('token');
+    this.router.navigateByUrl("/log-in")
+    console.log("logout sucessfully!!!");
   }
 }

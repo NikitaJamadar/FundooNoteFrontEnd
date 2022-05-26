@@ -1,13 +1,14 @@
-<div fxLayout="row wrap">
-    <div *ngFor="let note of recievedNoteList | filter:FilterMsg" fxLayout="column" fxLayoutAlign="space-around center"
-        [style.background]="note.bgColor" class="Display">
-        <div>
-            <p style="font-size: medium;font: bold;margin-left: -100px;" (click)="openDialog(note)">{{note.title}}</p>
-            <p style="margin-left: -100px;" (click)="openDialog(note)">{{note.description}}</p>
-
-        </div>
-        <div style="margin-left:4px;">
-            <app-icons [notedata]="note" (refresh)="receivedMessage($event)" class="icons"></app-icons>
-        </div>
+>
+<div class="display ">
+    <div  *ngFor="let note of recievedNoteList | filter:FilterMsg">
+        <mat-card class="notes" [style.background]="note.bgColor">
+            <div class="Title">
+                <p (click)="openDialog(note)">{{note.title}}</p>
+                <p (click)="openDialog(note)">{{note.description}}</p>
+            </div>
+            <div>
+                <app-icons class="icons" [notedata]="note" (refresh)="receivedMessage($event)"></app-icons>
+            </div>
+        </mat-card>
     </div>
 </div>
